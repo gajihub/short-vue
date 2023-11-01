@@ -51,7 +51,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     "@nuxtjs/vuetify",
   ],
-  target: "static",
+  base: "/short-vue/",
   router: {
     base: "/short-vue/",
   },
