@@ -38,11 +38,22 @@ export default {
   methods: {
     clickIcon (clickStr) {
       if (clickStr === 'like') {
-        this.isunlikeCheck = false
-        this.islikeCheck = true
+        if(!this.islikeCheck) {
+          this.isunlikeCheck = false
+          this.islikeCheck = true
+        }else{
+          this.isunlikeCheck = false
+          this.islikeCheck = false
+        }
+        
       } else {
-        this.isunlikeCheck = true
-        this.islikeCheck = false
+        if(!this.isunlikeCheck) {
+          this.isunlikeCheck = true
+          this.islikeCheck = false
+        }else{
+          this.isunlikeCheck = false
+          this.islikeCheck = false
+        }        
       }
     }
   }
