@@ -1,0 +1,35 @@
+.sliderWrap, .Wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#0F0F0F;
+  }
+  .mobilesliderWrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#0F0F0F;
+  }
+  [class~="video-player"], [class~="video-js"]{
+    position:relative;
+    width: 100%;
+    height: 100%;
+  }
+  .comment {
+    [class~="video-player"] video {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    [class*="playerWrap_"]{
+      [class*="action_"]{
+        right: -1px;
+      }
+      [class*="icon_"] {
+        background-color: rgba(255,255,255,.2);
+      }
+    }
+  }

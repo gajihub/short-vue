@@ -1,0 +1,62 @@
+[class~="video-js"] {
+    [class~="vjs-fullscreen-control"], [class~="vjs-picture-in-picture-control"], [class~="vjs-remaining-time"] {
+      display: none;
+    }
+    [class~="vjs-control-bar"]{
+      background-color: transparent;
+    }
+    [class~="vjs-progress-control"]{
+      display: none;
+    }
+    [class~="vjs-volume-panel"] {
+      position: absolute;
+      bottom:auto;
+      right:0;
+      &[class~="vjs-volume-panel-horizontal"]{
+        &:hover{
+          width:4em;
+          transition: none;
+        }
+      }
+    }
+    [class~="vjs-big-play-button"]{
+      margin:0;
+      border: 0;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255,255,255,.1);
+      font-size: 6em;
+      line-height: 1.5em;
+      height: 1.5em;
+      width: 1.5em;
+    }
+    [class~="vjs-control-bar"]{
+      bottom:auto;
+      top:0;
+    }
+    [class~="vjs-volume-control"]{
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width:0 !important;
+      height:0 !important;
+      transition:none !important;
+    }
+    [class~="vjs-button"]{
+      &[class~="vjs-mute-control"],&[class~="vjs-control"]{
+        padding-bottom: 4em;
+        &:hover {
+          transition: none;
+        }
+      }
+      & > [class~="vjs-icon-placeholder"]{
+        &::before {
+          font-size: 2.5em;
+        }
+      }
+      [class~="vjs-volume-panel"]{
+        display:none;
+      }
+    }
+  }

@@ -1,0 +1,31 @@
+.iconBox {
+    cursor: pointer;
+    .icon{
+      background-color: #272727;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin:0 auto;
+    }
+    .text {
+      margin-top: 4px;
+      color:#fff;
+    }
+    &.iconBoxMobile {
+      .icon {
+        background-color: rgba(255,255,255,.2);
+      }
+    }
+    &.check {
+      .icon {
+        background-color: rgba(255,255,255,.8);
+      }
+      [class~="material-icons"] {
+        color: #010101;
+      }
+    }
+  }
