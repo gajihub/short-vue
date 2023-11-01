@@ -64,9 +64,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  target: "static", // 정적 웹사이트임을 명시
-  router: {
-    base: "/short-vue/", // github repository 이름 넣기
-  },
 };
