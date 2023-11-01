@@ -16,6 +16,18 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/" }],
+    link: [
+      {
+        rel: "styleheet",
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+      },
+    ],
+    link: [
+      {
+        rel: "styleheet",
+        href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0",
+      },
+    ],
   },
   alias: {
     "@": resolve(__dirname, "./"),
