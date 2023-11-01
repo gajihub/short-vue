@@ -51,6 +51,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     "@nuxtjs/vuetify",
   ],
+  base: "/short-vue/",
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
