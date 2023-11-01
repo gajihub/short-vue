@@ -52,7 +52,10 @@ export default {
     "@nuxtjs/vuetify",
   ],
   base: "/short-vue/",
-
+  target: "static",
+  router: {
+    base: "/short-vue/",
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
