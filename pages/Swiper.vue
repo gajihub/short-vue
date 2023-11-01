@@ -4,12 +4,12 @@
     :class="$style.sliderWrap"
     :plugins="plugins"
   >
-    <div :class="$style.slide"><video src="/video/video01.mp4" width="100%" height="100%" autoplay></video></div>
-    <div :class="$style.slide"><video src="/video/video02.mp4" width="100%" height="100%" autoplay></video></div>
-    <div :class="$style.slide"><video src="/video/video03.mp4" width="100%" height="100%" autoplay></video></div>
-    <div :class="$style.slide"><video src="/video/video04.mp4" width="100%" height="100%" autoplay></video></div>
-    <div :class="$style.slide"><video src="/video/video05.mp4" width="100%" height="100%" autoplay></video></div>
-    <div :class="$style.slide"><video src="/video/video06.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video01.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video02.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video03.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video04.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video05.mp4" width="100%" height="100%" autoplay></video></div>
+    <div :class="$style.slide"><video src="/video06.mp4" width="100%" height="100%" autoplay></video></div>
   </flicking>
 </template>
 <script>

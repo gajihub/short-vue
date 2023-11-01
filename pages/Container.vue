@@ -69,16 +69,16 @@ export default {
         autoplay: true,
         controls: true,
         sources: [{
-        src: '/video/video01.mp4',
+        src: 'video/video01.mp4',
         type: 'video/mp4'
       }, {
-        src: '/video/video02.mp4',
+        src: 'video/video02.mp4',
         type: 'video/mp4'
       }, {
-        src: '/video/video03.mp4',
+        src: 'video/video03.mp4',
         type: 'video/mp4'
       }, {
-        src: '/video/video04.mp4',
+        src: 'video/video04.mp4',
         type: 'video/mp4'
       }],
       },
