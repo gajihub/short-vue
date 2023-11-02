@@ -1,13 +1,9 @@
 .commentWrap {
-    display: none;
     width: 340px;
     height: 603px;
     background-color: rgb(33, 33, 33);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    &.isBlock {
-        display: block;
-    }
     &.mCommentWrap {
         position: absolute;
         bottom:0;

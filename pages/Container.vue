@@ -23,7 +23,7 @@
       <!-- //클릭 영역 -->
     </PlayerWrap>
     <!-- 댓글 입력 영역-->
-    <CommentWrap :isShow="isCommentCheck"></CommentWrap>
+    <CommentWrap :isShow="isCommentCheck" @close="clickClose"></CommentWrap>
     <!-- //댓글 입력 영역-->
   </div>
   </flicking>
@@ -42,6 +42,7 @@ import More from '@components/actionIconBox/More.vue'
 import VueFlicking from '@egjs/vue-flicking'
 import { AutoPlay } from '@egjs/flicking-plugins'
 
+import 'material-symbols/index.css';
 import '@egjs/vue-flicking/dist/flicking.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.use(VueFlicking)
@@ -101,7 +102,14 @@ export default {
       if (!this.isCommentCheck) {
         this.isCommentCheck = true
       } else {
+        return;
+      }
+    },
+    clickClose(emitClose){
+      if(emitClose){
         this.isCommentCheck = false
+      }else{
+        this.isCommentCheck = true
       }
     }
   }

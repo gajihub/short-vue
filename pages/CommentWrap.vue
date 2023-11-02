@@ -1,9 +1,9 @@
 <template>
-    <div :class="[$style.commentWrap, checkShow ? $style.isBlock : '', isMobile ? $style.mCommentWrap : '', isClose ? $style.close : '']">
-      <transition name="fade">
-        <CommentList @close="clickClose"></CommentList>
-      </transition>
+   <v-expand-x-transition >
+    <div v-show="checkShow" :class="[$style.commentWrap, isMobile ? $style.mCommentWrap : '', isClose ? $style.close : '']">
+     <CommentList  @close="clickClose"></CommentList>
     </div>
+  </v-expand-x-transition>
 </template>
 
 <script>
@@ -22,15 +22,13 @@ export default {
     return {
       checkShow: this.isShow,
       isMobile: false,
-      isClose: false
+      isClose: false,
     }
   },
   watch: {
     isShow () {
-      console.log(this.isClose + ' ' + this.checkShow)
-      if (this.isClose && !this.checkShow) {
+      if (!this.checkShow) {
         this.checkShow = true
-        this.isClose = false
       } else {
         this.checkShow = this.isShow
       }
@@ -47,16 +45,11 @@ export default {
   },
   methods: {
     clickClose (emitClose) {
-      this.isClose = emitClose
+      this.$emit('close', emitClose)
     }
   }
 }
 </script>
 <style  module>
 @import '../assets/scss/pages/CommentWrap.module.scss';
-</style>
-<style>
-   .fade-enter-active, .fade-leave-active {
-    transition: width .5s;
-  }
 </style>
