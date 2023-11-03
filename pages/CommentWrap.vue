@@ -1,9 +1,9 @@
 <template>
-   <v-expand-x-transition >
+   <transition :name="isMobile ? 'mobile-slide' : 'slide'">
     <div v-show="checkShow" :class="[$style.commentWrap, isMobile ? $style.mCommentWrap : '', isClose ? $style.close : '']">
      <CommentList  @close="clickClose"></CommentList>
     </div>
-  </v-expand-x-transition>
+  </transition>
 </template>
 
 <script>
@@ -52,4 +52,44 @@ export default {
 </script>
 <style  module>
 @import '../assets/scss/pages/CommentWrap.module.scss';
+</style>
+<style>
+/* Pc버전 */
+.slide-enter-active {
+  width: 340px;
+  transition: width .3s ease-in-out;
+}
+
+.slide-leave-active {
+  width:0;
+  transition: width .3s ease-in-out;
+}
+.slide-enter-active [class*="CommentList"], .slide-leave-active [class*="CommentList"]{
+  visibility: hidden;
+}
+.slide-enter
+{
+  width: 0;
+  opacity: 0;
+}
+
+
+/* Mobile 버전 */
+.mobile-slide-enter-active {
+  height: 603px;
+  transition: height .3s ease-in-out;
+}
+
+.mobile-slide-leave-active {
+  height:0;
+  transition: height .3s ease-in-out;
+}
+.mobile-slide-enter-active [class*="CommentList"], .mobile-slide-leave-active [class*="CommentList"]{
+  visibility: hidden;
+}
+.mobile-slide-enter
+{
+  height: 0;
+  opacity: 0;
+}
 </style>
