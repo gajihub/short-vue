@@ -25,7 +25,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    "normalize.css/normalize.css",
+    "material-symbols/index.css",
+    "@egjs/vue-flicking/dist/flicking.css",
+    "material-design-icons-iconfont/dist/material-design-icons.css",
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

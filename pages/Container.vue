@@ -42,9 +42,6 @@ import More from '@components/actionIconBox/More.vue'
 import VueFlicking from '@egjs/vue-flicking'
 import { AutoPlay } from '@egjs/flicking-plugins'
 
-import 'material-symbols/index.css';
-import '@egjs/vue-flicking/dist/flicking.css'
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.use(VueFlicking)
 
 
