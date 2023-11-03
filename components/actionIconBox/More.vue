@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.more">
     <v-overlay v-if="isMobile" v-model="isShowMore" @click="moreClick"></v-overlay>
-    <transition  :name="isShowMore ? 'fade' : 'slide'">
+    <transition  :name="isMobile ? 'fade' : 'slide'">
       <v-list lines="one" v-show="isShowMore" :class="[$style.moreList, isMobile ? $style.mobile : '']">
         <v-list-item><Explain/><p>설명</p></v-list-item>
         <v-list-item><Subtitle/><p>자막</p></v-list-item>
@@ -73,9 +73,9 @@ export default {
 <style>
 /* Pc버전 */
 .slide-enter-active, .slide-leave-active {
-  transition: all .1s ease;
+  transition: all .2s ease;
 }
-.slide-enter-active [class*="moreList"], .slide-leave-active [class*="moreList"]{
+.slide-enter-active [class*="v-list-item"]{
   visibility: hidden;
 }
 .slide-enter, .slide-leave-enter
@@ -85,19 +85,19 @@ export default {
 
 
 /* Mobile 버전 */
-.mobile-enter-active {
-  height: 603px;
+.fade-enter-active {
+  height: 210px;
   transition: height .1s ease-in-out;
 }
 
-.mobile-leave-active {
+.fade-leave-active {
   height:0;
   transition: height .1s ease-in-out;
 }
-.mobile-enter-active [class*="moreList"], .mobile-leave-active [class*="moreList"]{
+.fade-enter-active [class*="v-list-item"]{
   visibility: hidden;
 }
-.mobile-enter
+.fade-enter
 {
   height: 0;
   opacity: 0;

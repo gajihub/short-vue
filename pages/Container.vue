@@ -1,6 +1,6 @@
 <template>
   <flicking
-    :options="{ horizontal: false, autoResize: true }"
+    :options="{ horizontal: false, autoResize: true}"
     :class="[$style.sliderWrap ,  isMobile ? $style.mobilesliderWrap : '', isCommentCheck ? $style.comment : '']">
   <div v-for="(item) in videoOptions.sources" :key="item.src" :class="$style.Wrap">
     <PlayerWrap>
