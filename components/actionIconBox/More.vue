@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import MobileDetect from 'mobile-detect'
 import MoreIcon from '@/components/icon/MoreIcon'
 import IconBox from '@/components/actionIconBox/IconBox'
 import Subtitle from '@/components/icon/Subtitle'
@@ -49,8 +48,8 @@ export default {
       },
   },
   mounted () {
-    const md = new MobileDetect(window.navigator.userAgent)
-    if (md.mobile()) {
+    const md = this.$mobileDetect.mobile()
+    if (md) {
       this.isMobile = true
     } else {
       this.isMobile = false

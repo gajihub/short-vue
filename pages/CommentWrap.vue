@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import MobileDetect from 'mobile-detect'
 import CommentList from '@components/comments/comment/CommentList.vue'
 
 export default {
@@ -36,8 +35,8 @@ export default {
 
   },
   mounted () {
-    const md = new MobileDetect(window.navigator.userAgent)
-    if (md.mobile()) {
+    const md = this.$mobileDetect.mobile()
+    if (md) {
       this.isMobile = true
     } else {
       this.isMobile = false

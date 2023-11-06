@@ -4,7 +4,6 @@
   
   <script>
   import videojs from 'video.js';
-  import 'video.js/dist/video-js.css'
   
   export default {
     name: 'VideoPlayer',
@@ -23,7 +22,6 @@
     },
     mounted() {
       this.player = videojs(this.$refs.videoPlayer, this.options, () => {
-        //this.player.log('onPlayerReady', this);
       });
     },
     beforeDestroy() {

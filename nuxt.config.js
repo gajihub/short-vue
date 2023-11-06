@@ -30,6 +30,7 @@ export default {
     "material-symbols/index.css",
     "@egjs/vue-flicking/dist/flicking.css",
     "material-design-icons-iconfont/dist/material-design-icons.css",
+    "video.js/dist/video-js.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -48,7 +49,7 @@ export default {
     base: "/short-vue/",
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["nuxt-mobile"],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

@@ -130,7 +130,6 @@
 </template>
 
 <script>
-import MobileDetect from 'mobile-detect'
 import ProfileIcon from '@components/icon/ProfileIcon'
 import CommentLikeIconVue from '@components/comments/icon/CommentLikeIcon.vue'
 import CommentUnlikeIconVue from '@components/comments/icon/CommentUnlikeIcon.vue'
@@ -149,8 +148,8 @@ export default {
     }
   },
   mounted () {
-    const md = new MobileDetect(window.navigator.userAgent)
-    if (md.mobile()) {
+    const md = this.$mobileDetect.mobile()
+    if (md) {
       this.isMobile = true
     } else {
       this.isMobile = false

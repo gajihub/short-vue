@@ -31,7 +31,6 @@
 
 <script>
 import Vue from 'vue'
-import MobileDetect from 'mobile-detect'
 import VideoPlayer from './videojsWrap.vue'
 import PlayerWrap from './PlayerWrap.vue'
 import IconBoxWrap from './IconBoxWrap.vue'
@@ -41,6 +40,8 @@ import IconBox from '@components/actionIconBox/IconBox.vue'
 import More from '@components/actionIconBox/More.vue'
 import VueFlicking from '@egjs/vue-flicking'
 import { AutoPlay } from '@egjs/flicking-plugins'
+
+import videoList from '../data/video.json'
 
 Vue.use(VueFlicking)
 
@@ -63,29 +64,18 @@ export default {
       plugins: [new AutoPlay()],
       isMobile: false,
       isCheckIcon: false,
+      videoList: videoList,
       videoOptions:{
         autoplay: true,
         controls: true,
-        sources: [{
-        src: 'video/video01.mp4',
-        type: 'video/mp4'
-      }, {
-        src: 'video/video02.mp4',
-        type: 'video/mp4'
-      }, {
-        src: 'video/video03.mp4',
-        type: 'video/mp4'
-      }, {
-        src: 'video/video04.mp4',
-        type: 'video/mp4'
-      }],
+        sources: videoList
       },
       isCommentCheck: false
     }
   },
   mounted () {
-    const md = new MobileDetect(window.navigator.userAgent)
-    if (md.mobile()) {
+    const md = this.$mobileDetect.mobile()
+    if (md) {
       this.isMobile = true
     } else {
       this.isMobile = false
