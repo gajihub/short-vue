@@ -1,6 +1,6 @@
 <template>
-  <div :class="$style.comment">
-    <IconBox @click="clickComment">
+  <div :class="$style.comment" @click="clickComment">
+    <IconBox>
       <template #icon><CommentIcon></CommentIcon></template>
       <template #text>345</template>
     </IconBox>
@@ -17,11 +17,17 @@ export default {
     CommentIcon,
     IconBox
   },
-  methods: {
-    clickComment () {
-      console.log('a')
+  data(){
+    return{
+      showComment: this.CommentCheck
     }
+  },
+  methods:{
+    clickComment () {
+      this.$emit('click')
+    },
   }
+
 }
 </script>
 <style  module>

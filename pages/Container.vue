@@ -2,7 +2,7 @@
   <flicking
     :options="{ horizontal: false, autoResize: true}"
     :class="[$style.sliderWrap ,  isMobile ? $style.mobilesliderWrap : '', isCommentCheck ? $style.comment : '']">
-  <div v-for="(item) in videoOptions.sources" :key="item.src" :class="$style.Wrap">
+  <div v-for="(item, i) in videoOptions.sources" :key="item.src" :class="$style.Wrap">
     <PlayerWrap>
       <!-- 플레이어 영역 -->
       <template #player>
@@ -12,18 +12,13 @@
       <!-- 클릭 영역 -->
       <template #action>
         <IconBoxWrap :checkIcon="isCheckIcon" @click="clickIcon"></IconBoxWrap>
-        <div :class="$style.comment">
-          <IconBox @click="clickComment">
-            <template #icon><CommentIcon></CommentIcon></template>
-            <template #text>345</template>
-          </IconBox>
-        </div>
+        <CommentAction @click="clickComment(i)"></CommentAction>
         <More></More>
       </template>
       <!-- //클릭 영역 -->
     </PlayerWrap>
     <!-- 댓글 입력 영역-->
-    <CommentWrap :isShow="isCommentCheck" @close="clickClose"></CommentWrap>
+    <CommentWrap :isNum="(i+1)" v-show="item.id == commentNum ? isCommentCheck : ''" @close="clickClose"></CommentWrap>
     <!-- //댓글 입력 영역-->
   </div>
   </flicking>
@@ -35,6 +30,7 @@ import VideoPlayer from './videojsWrap.vue'
 import PlayerWrap from './PlayerWrap.vue'
 import IconBoxWrap from './IconBoxWrap.vue'
 import CommentWrap from './CommentWrap.vue'
+import CommentAction from '@components/comments/comment/Comment.vue'
 import CommentIcon from '@components/comments/icon/CommentIcon.vue'
 import IconBox from '@components/actionIconBox/IconBox.vue'
 import More from '@components/actionIconBox/More.vue'
@@ -57,7 +53,8 @@ export default {
     CommentIcon,
     IconBox,
     CommentWrap,
-    VideoPlayer
+    VideoPlayer,
+    CommentAction
   },
   data () {
     return {
@@ -70,7 +67,8 @@ export default {
         controls: true,
         sources: videoList
       },
-      isCommentCheck: false
+      isCommentCheck: false,
+      commentNum: null,
     }
   },
   mounted () {
@@ -85,9 +83,10 @@ export default {
     clickIcon () {
       this.isCheckIcon = true
     },
-    clickComment () {
-      if (!this.isCommentCheck) {
+    clickComment (num) {
+      if (!this.isCommentCheck ) {
         this.isCommentCheck = true
+        this.commentNum = (num + 1)
       } else {
         return;
       }

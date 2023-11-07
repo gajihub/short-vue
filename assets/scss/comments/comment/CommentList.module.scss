@@ -19,7 +19,7 @@
     font-size: 18px;
     font-weight: bold;
     text-align: left;
-    height: 40px;
+    height: 56px;
     line-height: 40px;
     .right {
         width: 40px;
@@ -61,10 +61,13 @@
 }
 .userList {
     list-style: none;
-    padding: 20px 0;
+    padding: 20px 0 20px 0;
     margin:0;
     height: 500px;
     overflow-y: auto;
+    &ul {
+        padding-left:0;
+    }
 }
 .listinner {
     display: flex;
@@ -111,7 +114,7 @@
     }
 }
 .detail {
-    width: calc(100% - 60px);
+    width: 100%;
     padding-left: 60px;
     color:rgb(241, 241, 241);
     word-wrap: break-word;

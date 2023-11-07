@@ -22,6 +22,7 @@ export default {
     "@images": resolve(__dirname, "./assets/images"),
     "@scss": resolve(__dirname, "./assets/scss"),
     "@components": resolve(__dirname, "./components"),
+    "@data": resolve(__dirname, "./data"),
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

@@ -1,7 +1,7 @@
 <template>
    <transition :name="isMobile ? 'mobile-slide' : 'slide'">
     <div v-show="checkShow" :class="[$style.commentWrap, isMobile ? $style.mCommentWrap : '', isClose ? $style.close : '']">
-     <CommentList  @close="clickClose"></CommentList>
+     <CommentList  :isNum="isNum" @close="clickClose"></CommentList>
     </div>
   </transition>
 </template>
@@ -15,7 +15,8 @@ export default {
     CommentList
   },
   props: {
-    isShow: Boolean
+    isShow: Boolean,
+    isNum: Number,
   },
   data () {
     return {
