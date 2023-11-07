@@ -6,13 +6,13 @@
     <PlayerWrap>
       <!-- 플레이어 영역 -->
       <template #player>
-        <video-player  :options="{ autoplay: true, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
+        <video-player :options="{ autoplay: true, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
       </template>
       <!-- //플레이어 영역 -->
       <!-- 클릭 영역 -->
       <template #action>
         <IconBoxWrap :checkIcon="isCheckIcon" @click="clickIcon"></IconBoxWrap>
-        <CommentAction @click="clickComment(i)"></CommentAction>
+        <CommentAction @click="clickComment(i)" :commentNum="item.id"></CommentAction>
         <More></More>
       </template>
       <!-- //클릭 영역 -->
