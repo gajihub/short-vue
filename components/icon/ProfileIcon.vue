@@ -10,9 +10,6 @@ export default {
   props: {
     color: String
   },
-  mounted () {
-    console.log(this.color)
-  }
 }
 </script>
   <style  module>

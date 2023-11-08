@@ -1,9 +1,11 @@
 <template>
-    <video ref="videoPlayer" class="video-js"></video>
-  </template>
+    <video ref="videoPlayer" class="video-js" @loadedmetadata="logDuration"></video>
+</template>
   
   <script>
   import videojs from 'video.js';
+
+  const arrPlayer = [];
   
   export default {
     name: 'VideoPlayer',
@@ -17,17 +19,27 @@
     },
     data() {
       return {
-        player: null
+        player: null,
+      
       }
     },
     mounted() {
-      this.player = videojs(this.$refs.videoPlayer, this.options, () => {
-      });
+      this.initializePlayer();
     },
     beforeDestroy() {
       if (this.player) {
         this.player.dispose();
       }
+    },
+    methods:{
+      logDuration() {
+        arrPlayer.push(this.$refs.videoPlayer.duration);
+        this.$emit('handlePlaytime', arrPlayer)
+        
+      },
+      initializePlayer() {
+        this.player = videojs(this.$refs.videoPlayer, this.options);
+      },
     }
   }
   </script>
