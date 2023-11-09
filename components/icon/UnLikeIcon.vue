@@ -8,5 +8,5 @@ export default {
 }
 </script>
 <style  module>
-@import '../../assets/scss/icon/Unlike.module.scss';
+    @import '../../assets/scss/icon/Icon.module.scss';
 </style>

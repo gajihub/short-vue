@@ -4,12 +4,14 @@
          "video": "vdieo01",
          "id": "1",
          "user": "@user_v01",
+         "profile": "blue",
          "reg_date": "하루 전",
          "content": "골때녀 좋아요!"
        },
        {
          "video": "vdieo01",
          "id": "2",
+         "profile": "purple",
          "user": "@user_v02",
          "reg_date": "하루 전",
          "content": "굿굿!"
@@ -17,6 +19,7 @@
        {
          "video": "vdieo01",
          "id": "3",
+         "profile": "pink",
          "user": "@user_v03",
          "reg_date": "하루 전",
          "content": "골때녀 경기장 처음 봤어요!"
@@ -24,6 +27,7 @@
        {
          "video": "vdieo01",
          "id": "4",
+         "profile": "deep-purple",
          "user": "@user_v04",
          "reg_date": "3일 전",
          "content": "스탭 정말 많네요!경기장도 넓어요"
@@ -31,6 +35,7 @@
        {
          "video": "vdieo01",
          "id": "5",
+         "profile": "blue",
          "user": "@user_v05",
          "reg_date": "3일 전",
          "content": "드디어!!!"
@@ -40,6 +45,7 @@
     {
       "video": "video02",
       "id": "1",
+      "profile": "deep-purple",
       "user": "@user_vv01",
       "reg_date": "1개월 전",
       "content": "서기 너무 귀여워요"
@@ -47,6 +53,7 @@
     {
       "video": "video02",
       "id": "2",
+      "profile": "indigo",
       "user": "@user_vv02",
       "reg_date": "1개월 전",
       "content":
@@ -55,6 +62,7 @@
     {
       "video": "video02",
       "id": "3",
+      "profile": "indigo",
       "user": "@user_vv03",
       "reg_date": "1개월 전",
       "content": "아 서기 너무귀여워 큐ㅠㅠ"
@@ -62,6 +70,7 @@
     {
       "video": "video02",
       "id": "4",
+      "profile": "light-blue",
       "user": "@user_vv04",
       "reg_date": "2개월 전",
       "content": "이런 이벤트 너무 좋네요ㅋㅋㅋ"
@@ -69,6 +78,7 @@
     {
       "video": "video02",
       "id": "5",
+      "profile": "cyan",
       "user": "@user_vv05",
       "reg_date": "2개월 전",
       "content":
@@ -77,6 +87,7 @@
     {
       "video": "video02",
       "id": "6",
+      "profile": "cyan",
       "user": "@user_vv06",
       "reg_date": "2개월 전",
       "content":
@@ -85,6 +96,7 @@
     {
       "video": "video02",
       "id": "7",
+      "profile": "teal",
       "user": "@user_vv07",
       "reg_date": "4개월 전",
       "content":
@@ -93,6 +105,7 @@
     {
       "video": "video02",
       "id": "8",
+      "profile": "green",
       "user": "@user_vv08",
       "reg_date": "4개월 전",
       "content": "서기 멋있다.\n침착하고, 자신감 있는 정확한 패스,\n정말 잘한다."
@@ -100,6 +113,7 @@
     {
       "video": "video02",
       "id": "9",
+      "profile": "green",
       "user": "@user_vv09",
       "reg_date": "5개월 전",
       "content": "서기 미모 폭발 ❤❤❤❤❤"
@@ -107,6 +121,7 @@
     {
       "video": "video02",
       "id": "10",
+      "profile": "green",
       "user": "@user_vv10",
       "reg_date": "5개월 전",
       "content":
@@ -117,6 +132,7 @@
     {
       "video": "video03",
       "id": "1",
+      "profile": "light-green",
       "user": "@user_vvv01",
       "reg_date": "2일 전",
       "content": "무슨 말이 필요한가. 내 원픽 혜인....ㅠㅠㅠ 사랑해요 ㅠㅠㅠㅠㅠ"
@@ -124,6 +140,7 @@
     {
       "video": "video03",
       "id": "2",
+      "profile": "lime",
       "user": "@user_vvv02",
       "reg_date": "2일 전",
       "content":
@@ -132,6 +149,7 @@
     {
       "video": "video03",
       "id": "3",
+      "profile": "amber",
       "user": "@user_vvv03",
       "reg_date": "3일 전",
       "content":
@@ -140,6 +158,7 @@
     {
       "video": "video03",
       "id": "4",
+      "profile": "amber",
       "user": "@user_vvv04",
       "reg_date": "5일 전",
       "content": "성격도 에이스 재질이라 진짜 멋있음…"
@@ -147,6 +166,7 @@
     {
       "video": "video03",
       "id": "5",
+      "profile": "orange",
       "user": "@user_vvv05",
       "reg_date": "5일 전",
       "content":
@@ -155,6 +175,7 @@
     {
       "video": "video03",
       "id": "5",
+      "profile": "brown",
       "user": "@user_vvv05",
       "reg_date": "6일 전",
       "content": "정혜인 졸멋ㅎ"
@@ -162,6 +183,7 @@
     {
       "video": "video03",
       "id": "6",
+      "profile": "brown",
       "user": "@user_vvv06",
       "reg_date": "6일 전",
       "content": "골때녀볼때 내눈은 혜컴만 쫒고있다"
@@ -169,6 +191,7 @@
     {
       "video": "video03",
       "id": "7",
+      "profile": "brown",
       "user": "@user_vvv07",
       "reg_date": "6일 전",
       "content":
@@ -177,6 +200,7 @@
     {
       "video": "video03",
       "id": "8",
+      "profile": "blue-grey",
       "user": "@user_vvv08",
       "reg_date": "7일 전",
       "content": "The best player in the Show"
@@ -184,6 +208,7 @@
     {
       "video": "video03",
       "id": "9",
+      "profile": "grey",
       "user": "@user_vvv09",
       "reg_date": "9일 전",
       "content":
@@ -192,6 +217,7 @@
     {
       "video": "video03",
       "id": "10",
+      "profile": "grey",
       "user": "@user_vvv10",
       "reg_date": "10일 전",
       "content": "혜인짱 여자 홀란드 같네 ㅎ ㄷㄷ"
@@ -199,6 +225,7 @@
     {
       "video": "video03",
       "id": "11",
+      "profile": "grey",
       "user": "@user_vvv11",
       "reg_date": "12일 전",
       "content":
@@ -207,6 +234,7 @@
     {
       "video": "video03",
       "id": "11",
+      "profile": "shades",
       "user": "@user_vvv11",
       "reg_date": "12일 전",
       "content":
@@ -215,6 +243,7 @@
     {
       "video": "video03",
       "id": "12",
+      "profile": "shades",
       "user": "@user_vvv12",
       "reg_date": "14일 전",
       "content": "정혜인 최고입니다 👍  골때녀 최애 입니다"
@@ -222,6 +251,7 @@
     {
       "video": "video03",
       "id": "13",
+      "profile": "shades",
       "user": "@user_vvv13",
       "reg_date": "14일 전",
       "content":
@@ -230,6 +260,7 @@
     {
       "video": "video03",
       "id": "14",
+      "profile": "purple",
       "user": "@user_vvv14",
       "reg_date": "15일 전",
       "content":
@@ -238,6 +269,7 @@
     {
       "video": "video03",
       "id": "15",
+      "profile": "purple",
       "user": "@user_vvv15",
       "reg_date": "15일 전",
       "content":
@@ -246,6 +278,7 @@
     {
       "video": "video03",
       "id": "16",
+      "profile": "blue",
       "user": "@user_vvv16",
       "reg_date": "18일 전",
       "content": "선수급 수준은 아니지만 진자 킥 장난아니다"
@@ -253,6 +286,7 @@
     {
       "video": "video03",
       "id": "17",
+      "profile": "deep-purple",
       "user": "@user_vvv17",
       "reg_date": "한달 전",
       "content":
@@ -261,6 +295,7 @@
     {
       "video": "video03",
       "id": "18",
+      "profile": "deep-purple",
       "user": "@user_vvv18",
       "reg_date": "한달 전",
       "content":
@@ -269,6 +304,7 @@
     {
       "video": "video03",
       "id": "19",
+      "profile": "deep-purple",
       "user": "@user_vvv19",
       "reg_date": "한달 전",
       "content":
@@ -277,6 +313,7 @@
     {
       "video": "video03",
       "id": "20",
+      "profile": "deep-purple",
       "user": "@user_vvv20",
       "reg_date": "두달 전",
       "content": "혜컴인데"
@@ -286,6 +323,7 @@
     {
       "video": "video04",
       "id": "1",
+      "profile": "blue",
       "user": "@user_vvvv01",
       "reg_date": "2달 전",
       "content": "다시 시작하는 대만편 응원합니다!🎉🎉"
@@ -293,6 +331,7 @@
     {
       "video": "video04",
       "id": "2",
+      "profile": "indigo",
       "user": "@user_vvvv02",
       "reg_date": "2달 전",
       "content":
@@ -301,6 +340,7 @@
     {
       "video": "video04",
       "id": "3",
+      "profile": "indigo",
       "user": "@user_vvvv03",
       "reg_date": "2달 전",
       "content": "ASAP 대만 가고싶다"
@@ -308,6 +348,7 @@
     {
       "video": "video04",
       "id": "4",
+      "profile": "indigo",
       "user": "@user_vvvv04",
       "reg_date": "3달 전",
       "content":
@@ -316,6 +357,7 @@
     {
       "video": "video04",
       "id": "5",
+      "profile": "light-blue",
       "user": "@user_vvvv05",
       "reg_date": "3달 전",
       "content":
@@ -324,6 +366,7 @@
     {
       "video": "video04",
       "id": "6",
+      "profile": "light-blue",
       "user": "@user_vvvv06",
       "reg_date": "3달 전",
       "content":

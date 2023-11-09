@@ -9,5 +9,5 @@ export default {
 </script>
 
 <style  module>
-@import '../../../assets/scss/comments/icon/CommentLikeIcon.module.scss';
+@import '../../../assets/scss/icon/Icon.module.scss';
 </style>

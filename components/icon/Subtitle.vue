@@ -9,6 +9,6 @@
   </script>
   
   <style module>
-    @import '../../assets/scss/icon/Subtitle.module.scss';
+    @import '../../assets/scss/icon/Icon.module.scss';
   </style>
   

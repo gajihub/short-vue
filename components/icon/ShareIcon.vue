@@ -8,5 +8,5 @@ export default {
 }
 </script>
 <style  module>
-@import '../../assets/scss/icon/ShareIcon.module.scss';
+    @import '../../assets/scss/icon/Icon.module.scss';
 </style>

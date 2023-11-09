@@ -1,7 +1,9 @@
 .comment{
     overflow: hidden;
+    border-bottom: 1px solid #575454;
 }
 .CommentList{
+    position:relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 32px 0px;
     &.mobileCommentList {
         width: 100%;

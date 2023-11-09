@@ -1,3 +1,30 @@
-body{
-    background-color: transparent;
+.CommentWrite {
+    position: absolute;
+    bottom:-44px;
+    left:0;
+    width: 100%;
+    padding:15px 20px 15px 70px;
+    background-color: #212121;
+    ;
+    .profile{
+        flex: none;
+        position:absolute;
+        top:20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+        span {
+            display: inline-block;
+            position: relative;
+            bottom: 0px;
+            left: -3px;
+            [class~="material-icons"]{
+                color:#F1F1F1;
+                font-size: 48px;
+              }
+        }
+    }
 }

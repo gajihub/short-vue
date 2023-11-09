@@ -1,38 +1,40 @@
 <template>
     <div :class="[$style.CommentList, isMobile ? $style.mobileCommentList : '']">
-            <div :class="$style.title">
-                <div :class="$style.left">
-                    댓글<span :class="$style.number">{{ commentjson[videoNum].length }}</span>
-                </div>
-                <div :class="$style.right">
-                    <button :class="$style.rightbtn" @click="clickClose"></button>
-                </div>
-            </div>
-            <div :class="$style.comment">
-                <ul  :class="$style.userList">
-                    <li v-for="(item) in commentjson[videoNum]" :key="item.videoNum" :class="$style.listinner">
-                        <div :class="$style.profile">
-                        <ProfileIcon color='blue'/>
-                        </div>
-                        <div :class="$style.commentInfo">
-                            <span :class="$style.userid">{{ item.user }}</span>
-                            <span :class="$style.userdate">{{ item.reg_date }}</span>
-                        </div>
-                        <div :class="$style.detail">{{ item.content }}</div>
-                        <div :class="$style.toolbar">
-                            <span><CommentLikeIconVue/></span>
-                            <span><CommentUnlikeIconVue/></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+          <div :class="$style.title">
+              <div :class="$style.left">
+                  댓글<span :class="$style.number">{{ commentjson[videoNum].length }}</span>
+              </div>
+              <div :class="$style.right">
+                  <button :class="$style.rightbtn" @click="clickClose"></button>
+              </div>
+          </div>
+          <div :class="$style.comment">
+              <ul  :class="$style.userList">
+                  <li v-for="(item) in commentjson[videoNum]" :key="item.videoNum" :class="$style.listinner">
+                      <div :class="$style.profile">
+                      <ProfileIcon :color="item.profile"/>
+                      </div>
+                      <div :class="$style.commentInfo">
+                          <span :class="$style.userid">{{ item.user }}</span>
+                          <span :class="$style.userdate">{{ item.reg_date }}</span>
+                      </div>
+                      <div :class="$style.detail">{{ item.content }}</div>
+                      <div :class="$style.toolbar">
+                          <span><CommentLikeIconVue/></span>
+                          <span><CommentUnlikeIconVue/></span>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+          <CommentWrite></CommentWrite>
+      </div>
 </template>
 
 <script>
 import ProfileIcon from '@components/icon/ProfileIcon'
 import CommentLikeIconVue from '@components/comments/icon/CommentLikeIcon.vue'
 import CommentUnlikeIconVue from '@components/comments/icon/CommentUnlikeIcon.vue'
+import CommentWrite from './CommentWrite.vue'
 import commentjson from '@data/comment.json'
 
 export default {
@@ -40,7 +42,8 @@ export default {
   components: {
     ProfileIcon,
     CommentLikeIconVue,
-    CommentUnlikeIconVue
+    CommentUnlikeIconVue,
+    CommentWrite
   },
   props: {
     isNum: Number,

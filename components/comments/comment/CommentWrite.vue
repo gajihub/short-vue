@@ -1,12 +1,20 @@
 <template>
     <div :class="$style.CommentWrite">
-        <div>프로필</div>
+      <div :class="$style.profile">
+       <ProfileIcon color="blue"/>
+       </div>
+      <v-text-field :counter="50" label="댓글쓰기" hide-details></v-text-field>
     </div>
 </template>
 
 <script>
+import ProfileIcon from '@components/icon/ProfileIcon'
+
 export default {
-  name: 'CommentWrite'
+  name: 'CommentWrite',
+  components :{
+    ProfileIcon
+  }
 }
 </script>
 <style  module>

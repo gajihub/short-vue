@@ -1,12 +1,16 @@
 <template>
   <flicking
-    :options="{ horizontal: false, autoResize: true}"
-    :class="[$style.sliderWrap ,  isMobile ? $style.mobilesliderWrap : '', isCommentCheck ? $style.comment : '']">
+    ref="flicking"
+    @changed="flickingChanged"
+    @select="flickingHoldStart"
+    :options="{ align: 'center', horizontal: false, autoResize: true, changeOnHold: false, circular: false, moveType: 'strict' }"
+    :class="[$style.sliderWrap, isMobile ? $style.mobilesliderWrap : '', isCommentCheck ? $style.comment : '']"
+  >
   <div v-for="(item, i) in videoOptions.sources" :key="item.src" :class="$style.Wrap">
     <PlayerWrap>
       <!-- 플레이어 영역 -->
       <template #player>
-        <video-player ref="videoPlayer" @handlePlaytime="videoPlaytime" :options="{ autoplay: true, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
+        <video-player ref="videoPlayer" :options="{ autoplay: false, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
       </template>
       <!-- //플레이어 영역 -->
       <!-- 클릭 영역 -->
@@ -35,11 +39,11 @@ import CommentIcon from '@components/comments/icon/CommentIcon.vue'
 import IconBox from '@components/actionIconBox/IconBox.vue'
 import More from '@components/actionIconBox/More.vue'
 import VueFlicking from '@egjs/vue-flicking'
-import { AutoPlay } from '@egjs/flicking-plugins'
 
 import videoList from '../data/video.json'
 
 Vue.use(VueFlicking)
+
 
 export default {
   name: 'container',
@@ -56,18 +60,19 @@ export default {
   },
   data () {
     return {
-      plugins: [new AutoPlay()],
       isMobile: false,
       isCheckIcon: false,
       videoList: videoList,
       videoOptions:{
-        autoplay: true,
         controls: true,
         sources: videoList
       },
       isCommentCheck: false,
       commentNum: null,
-      timeout:null
+      timeout:null,
+      isPlaytime: null,
+      isemitClose: false,
+      isHoldEnabled: true,
     }
   },
   mounted () {
@@ -77,6 +82,12 @@ export default {
     } else {
       this.isMobile = false
     }
+
+    //video
+    this.timeout = setTimeout(() => {
+      this.$refs.videoPlayer[0].$el.play()
+      }, 100);
+   
   },
   beforeDestroy() {
     clearTimeout(this.timeout);
@@ -93,21 +104,32 @@ export default {
         return;
       }
     },
-    clickClose(emitClose){
-      if(emitClose){
+    clickClose(emitClose, num){
+      const fnum = this.commentNum - 1
+
+      this.isemitClose = emitClose
+   
+      if(this.isemitClose){
         this.isCommentCheck = false
-      }else{
-        this.isCommentCheck = true
+        this.$refs.flicking.$children[fnum].$parent.enableInput()
+       
       }
     },
-    videoPlaytime(playtime) {
-      this.timeout = setTimeout(() => {
-        console.log(playtime)
-      }, 100);
-    }
+    flickingHoldStart(e) {
+      //댓글창이 있는 경우 이동 안됨
+      if(this.isHoldEnabled && !this.isCommentCheck){
+        e.currentTarget.disableInput()
+      }
+      
+    },
+    flickingChanged(e){
+      const vnum = e.currentTarget.index
+      this.$refs.videoPlayer[vnum].$el.play(0)
+    },
    
   }
 }
+
 </script>
 
 <style  module>
