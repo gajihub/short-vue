@@ -3,28 +3,28 @@
     ref="flicking"
     @changed="flickingChanged"
     @select="flickingHoldStart"
-    :options="{ align: 'center', horizontal: false, autoResize: true, changeOnHold: false, circular: false, moveType: 'strict' }"
+    :options="{ align: isMobile ? 'prev' : 'center', horizontal: false, autoResize: true, changeOnHold: false, circular: false, moveType: 'strict' }"
     :class="[$style.sliderWrap, isMobile ? $style.mobilesliderWrap : '', isCommentCheck ? $style.comment : '']"
   >
-  <div v-for="(item, i) in videoOptions.sources" :key="item.src" :class="$style.Wrap">
-    <PlayerWrap>
-      <!-- 플레이어 영역 -->
-      <template #player>
-        <video-player ref="videoPlayer" :options="{ autoplay: false, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
-      </template>
-      <!-- //플레이어 영역 -->
-      <!-- 클릭 영역 -->
-      <template #action>
-        <IconBoxWrap :checkIcon="isCheckIcon" @click="clickIcon"></IconBoxWrap>
-        <CommentAction @click="clickComment(i)" :commentNum="item.id"></CommentAction>
-        <More></More>
-      </template>
-      <!-- //클릭 영역 -->
-    </PlayerWrap>
-    <!-- 댓글 입력 영역-->
-    <CommentWrap :isNum="(i+1)" v-show="item.id == commentNum ? isCommentCheck : ''" @close="clickClose"></CommentWrap>
-    <!-- //댓글 입력 영역-->
-  </div>
+    <div v-for="(item, i) in videoList" :key="i" :class="$style.Wrap">
+      <PlayerWrap>
+        <!-- 플레이어 영역 -->
+        <template #player>
+          <video-player ref="videoPlayer" :options="{ autoplay: false, controls: true, muted: true, width: '100%', height: '100%', sources: [{src: item.src, type:'video/mp4' }]}"></video-player>
+        </template>
+        <!-- //플레이어 영역 -->
+        <!-- 클릭 영역 -->
+        <template #action>
+          <IconBoxWrap :checkIcon="isCheckIcon" @click="clickIcon"></IconBoxWrap>
+          <CommentAction @click="clickComment(i)" :commentNum="(i+1)"></CommentAction>
+          <More></More>
+        </template>
+        <!-- //클릭 영역 -->
+      </PlayerWrap>
+      <!-- 댓글 입력 영역-->
+      <CommentWrap :isNum="(i+1)" v-show="item.id == commentNum ? isCommentCheck : ''" @close="clickClose"></CommentWrap>
+      <!-- //댓글 입력 영역-->
+    </div>
   </flicking>
 </template>
 
@@ -40,7 +40,7 @@ import IconBox from '@components/actionIconBox/IconBox.vue'
 import More from '@components/actionIconBox/More.vue'
 import VueFlicking from '@egjs/vue-flicking'
 
-import videoList from '../data/video.json'
+import videoList from '@data/video.json'
 
 Vue.use(VueFlicking)
 
@@ -86,7 +86,8 @@ export default {
     //video
     this.timeout = setTimeout(() => {
       this.$refs.videoPlayer[0].$el.play()
-      }, 100);
+    }, 100);
+
    
   },
   beforeDestroy() {
@@ -124,6 +125,11 @@ export default {
     },
     flickingChanged(e){
       const vnum = e.currentTarget.index
+      const vCurrent = e.currentTarget.visiblePanels
+      vCurrent.forEach(i => {
+        this.$refs.videoPlayer[i.index].$el.pause()
+      });
+     
       this.$refs.videoPlayer[vnum].$el.play(0)
     },
    

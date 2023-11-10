@@ -2,7 +2,7 @@
     <div :class="[$style.CommentList, isMobile ? $style.mobileCommentList : '']">
           <div :class="$style.title">
               <div :class="$style.left">
-                  댓글<span :class="$style.number">{{ commentjson[videoNum].length }}</span>
+                  댓글<span :class="$style.number">{{ videoNum ? commentjson[videoNum].length : 0 }}</span>
               </div>
               <div :class="$style.right">
                   <button :class="$style.rightbtn" @click="clickClose"></button>
@@ -46,14 +46,17 @@ export default {
     CommentWrite
   },
   props: {
-    isNum: Number,
+    isNum: {
+      type : Number,
+      default : null
+    },
   },
   data: function () {
     return {
       isMobile: false,
       isClose: false,
       commentjson:commentjson,
-      videoNum: 'video0'+this.isNum
+      videoNum: this.isNum
     }
   },
   mounted () {

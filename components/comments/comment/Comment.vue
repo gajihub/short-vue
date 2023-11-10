@@ -2,7 +2,7 @@
   <div :class="$style.comment" @click="clickComment">
     <IconBox>
       <template #icon><CommentIcon></CommentIcon></template>
-      <template #text>{{ commentjson[isCommentNum].length }}</template>
+      <template #text>{{ isCommentNum ? commentjson[commentNum].length : 0 }}</template>
     </IconBox>
   </div>
 </template>
@@ -19,14 +19,17 @@ export default {
     IconBox
   },
   props:{
-    commentNum: String,
+    commentNum : Number,
   },
   data(){
     return{
       showComment: this.CommentCheck,
-      isCommentNum : 'video0'+this.commentNum,
+      isCommentNum : this.commentNum,
       commentjson: commentjson
     }
+  },
+  methods(){
+    console.log(this.isCommentNum)
   },
   methods:{
     clickComment () {
